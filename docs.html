@@ -5,6 +5,7 @@ title: Docs
 
 <!-- Main -->
 <div id="main">
-  {% markdown post.md %}
+  {% capture sidebar %}{% include post.md %}{% endcapture %}
+  {{ sidebar | markdownify }}
 </div>
 <!-- /Main -->
