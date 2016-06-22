@@ -1,0 +1,75 @@
+<!-- ******DOCS****** --> 
+<section id="docs" class="docs section">
+<div class="container">
+  <div class="docs-inner">
+    <h2 class="title text-center">Get Started</h2>            
+    <div class="block">
+      <h3 class="sub-title text-center">Prerequisites</h3>
+      <h4>Install GCloud with alpha commands included</h4>
+      <div class="code-block">
+        <pre><code class="language-markup">
+ # If you don’t have gcloud installed, start by installing it
+ curl https://sdk.cloud.google.com | bash
+
+ # Authorize yourself
+ gcloud auth login
+    
+ # Install the Alpha component of gcloud
+ gcloud components install alpha
+    
+ # Set your default project
+ gcloud config set project &ltyour project ID&gt
+    
+ # Make sure that your CLI works:
+ gcloud alpha service-management list
+        </code></pre>
+      </div><!--//code-block-->
+      <p><a href="https://cloud.google.com/sdk/#Quick_Start" target="_blank">Details</a></p>
+    </div><!--//block-->
+
+    <div class="block">
+      <h3 class="sub-title text-center">Deploying and running our samples</h3>
+      <p>The instructions below describe how to deploy our samples. In those samples, we have an API server in 5 languages (Java, Go, Python, Node.js and Ruby) and clients for that server for iOS and Android. Feeling confident? Feel free to jump ahead to Create Your Own API.</p>
+    </div><!--//block-->
+
+    <div class="block">
+      <h4>Generate a password to access our Git repository</h4>
+      <p>Use your Google Account credentials to log into https://endpoints.googlesource.com. In the menu bar, click “Generate Password” and follow the instructions to save the password into a <strong>.gitcookies</strong> file.</p>
+    </div><!--//block-->
+ 
+    <div class="block">
+      <h4>Clone our Git repository</h4>
+      <p>Run the following command to clone our samples git repo.</p>
+      <div class="code-block">
+        <pre><code class="language-markup">
+ git clone https://endpoints.googlesource.com/eap
+        </code></pre>
+      </div><!--//code-block-->
+    </div><!--//block-->
+
+    <div class="block">
+      <h4>Deployment instructions</h4>
+      <p>To use Endpoints, your API solution must include a <a href="http://swagger.io/">Swagger</a> spec. All of our examples store the Swagger spec in a file named swagger.json, for example examples/nodejs/bookstore/swagger.json.</p>
+      <p><strong>Step 1: Set your API host name in swagger.json</strong><p>
+      <p>To get started with Endpoints, you must choose a unique name for your API service. During the Endpoints EAP, you must set this to the same host name that is serving traffic on your Managed VM back-end.</p>
+      <p>For example, if the URL to your backend is myapiservice.appspot.com, set myapiservice.appspot.com as your API host name.</p>
+      <p>The API host name is defined within your swagger.json file, in the “host” field. For example:</p>
+      <div class="code-block">
+        <pre><code class="language-markup">
+{
+  ...
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "A simple Google Cloud Endpoints Bookstore API example.",
+    "description": "Bookstore"
+  },
+  "host": "myapiservice.appspot.com",
+  ...
+}
+        </code></pre>
+      </div><!--//code-block-->
+    </div><!--//block-->
+  </div><!--//docs-inner-->         
+</div><!--//container-->
+</section><!--//docs->
